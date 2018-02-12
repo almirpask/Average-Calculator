@@ -1,5 +1,7 @@
 defmodule Student do
-    @moduledoc """ Define a struct and functions to handle a student. """
+    @moduledoc """ 
+        Define a struct and functions to handle a student. 
+    """
     defstruct name: nil, results: []
 
     @doc """ 
@@ -7,13 +9,28 @@ defmodule Student do
         ## Parameters
         - 'student' - A Student struct.
         ## Examples
-        * joao = %Student{name: "Joao Joaquin"}
+        * joao = %Student{name: 'Joao Joaquin'}
         Student.first_name(joao)
-        "Joaão"
+        "João"
     """
-    def fisrt_name(student) do
+    def first_name(student) do
         student.name
         |> String.split
         |> List.first
+    end
+
+    @doc """ 
+        Get the last name of a student
+        ### Parameters
+         - 'student' - A Student struct.
+        ## Examples
+        * joao = %Student{name: 'Joao Joaquin'}
+        Student.last_name(joao)
+        'Joaquin'
+    """
+    def last_name(student) do
+        student.name
+        |> String.split
+        |> List.last
     end
 end
